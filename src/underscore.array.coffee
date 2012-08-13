@@ -2,7 +2,7 @@ _a = {}
 
 
 
-_a.select = select = (arr, key, def = undefined) ->
+_a.take = take = (arr, key, def = undefined) ->
 	for val in arr
 		if key of val then val[key] else def
 
@@ -64,10 +64,10 @@ _a.same = same = (a, b, pred = undefined) ->
 	else
 		false
 
-_a.pick = pick = (arr) ->
+_a.sample = sample = (arr) ->
 	arr[Math.floor arr.length * Math.random()]
 
-_a.pickSome = pickSome = (arr, len) ->
+_a.samples = samples = (arr, len) ->
 	a = []
 	for i in [0...len]
 		if !a.length
