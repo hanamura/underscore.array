@@ -12,9 +12,13 @@ _a.dig = dig = (arr, keys, def = undefined) ->
 
 		while ks.length
 			k = ks.shift()
-			if k of val
-				val = val[k]
-			else
+			try
+				if k of val
+					val = val[k]
+				else
+					val = def
+					break
+			catch e
 				val = def
 				break
 		val
