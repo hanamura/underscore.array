@@ -6,7 +6,7 @@
 
 Collects values by key from each element of `arr`.
 
-```
+```javascript
 var arr = [
 	{name: 'foo', count: 10},
 	{name: 'bar', count: 20},
@@ -20,7 +20,7 @@ _.arr.take(arr, 'count', 0); // [10, 20, 0]
 
 Collects values by multiple keys from each element of `arr`.
 
-```
+```javascript
 var arr = [
 	{item: {elem: {name: 'foo'}}},
 	{item: {elem: {name: 'bar'}}},
@@ -34,7 +34,7 @@ _.arr.dig(arr, ['item', 'elem', 'name'], 'DEF'); // ['foo', 'bar', 'baz', 'DEF']
 
 Returns a rotated copy of `arr`.
 
-```
+```javascript
 _.arr.rotate([0, 1, 2, 3, 4], 1); // [4, 0, 1, 2, 3]
 _.arr.rotate([0, 1, 2, 3, 4], -2); // [2, 3, 4, 0, 1]
 ```
@@ -45,7 +45,7 @@ Returns `true` if `a` and `b` have the same elements, the same number of element
 
 You can optionally pass a `pred` function to check equality of elements. The operator `===` is used by default.
 
-```
+```javascript
 _.arr.equal([0, 1, 2], [0, 1, 2]); // true
 _.arr.equal([0, 1, 2], [1, 0, 2]); // false
 _.arr.equal(
@@ -61,7 +61,7 @@ Returns `true` if `a` and `b` have the same elements and the same number of elem
 
 You can optionally pass a `pred` function to check equality of elements. The operator `===` is used by default.
 
-```
+```javascript
 _.arr.same([0, 1, 2], [0, 1, 2]); // true
 _.arr.same([0, 1, 2], [1, 0, 2]); // true
 _.arr.same(
@@ -75,7 +75,7 @@ _.arr.same(
 
 Picks a random element from `arr`.
 
-```
+```javascript
 _.arr.sample([0, 1, 2, 3, 4]); // 1
 _.arr.sample([0, 1, 2, 3, 4]); // 4
 _.arr.sample([0, 1, 2, 3, 4]); // 2
@@ -85,7 +85,7 @@ _.arr.sample([0, 1, 2, 3, 4]); // 2
 
 Picks random elements from `arr`.
 
-```
+```javascript
 _.arr.samples([0, 1, 2, 3, 4], 3); // [2, 4, 0]
 _.arr.samples([0, 1, 2, 3, 4], 3); // [1, 0, 2]
 _.arr.samples([0, 1, 2, 3, 4], 3); // [4, 3, 0]
