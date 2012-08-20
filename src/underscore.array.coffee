@@ -4,7 +4,19 @@ _a = {}
 
 _a.take = take = (arr, key, def = undefined) ->
 	for val in arr
-		if key of val then val[key] else def
+		try
+			if key of val
+				val[key]
+			else
+				def
+		catch e
+			try
+				if val[key] != undefined
+					val[key]
+				else
+					def
+			catch e
+				def
 
 _a.dig = dig = (arr, keys, def = undefined) ->
 	for val in arr
@@ -19,8 +31,15 @@ _a.dig = dig = (arr, keys, def = undefined) ->
 					val = def
 					break
 			catch e
-				val = def
-				break
+				try
+					if val[k] != undefined
+						val = val[k]
+					else
+						val = def
+						break
+				catch e
+					val = def
+					break
 		val
 
 _a.rotate = rotate = (arr, count) ->
