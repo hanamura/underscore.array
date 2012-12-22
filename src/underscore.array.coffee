@@ -90,13 +90,18 @@ _a.same = same = (a, b, pred = undefined) ->
 _a.sample = sample = (arr) ->
 	arr[Math.floor arr.length * Math.random()]
 
-_a.samples = samples = (arr, len) ->
-	a = []
-	for i in [0...len]
-		if !a.length
-			a = arr.slice()
-		index = Math.floor(a.length * Math.random())
-		a.splice(index, 1)[0]
+_a.samples = samples = (arr, len, repeat = true) ->
+	if arr.length
+		a = arr[..]
+		for i in [0...len]
+			if not a.length
+				if repeat
+					a = arr[..]
+				else
+					break
+			a.splice(Math.floor(a.length * Math.random()), 1)[0]
+	else
+		[]
 
 
 
