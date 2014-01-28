@@ -6,7 +6,7 @@
   _a = {};
 
   _a.take = take = function(arr, key, def) {
-    var val, _i, _len, _results;
+    var e, val, _i, _len, _results;
     if (def == null) {
       def = void 0;
     }
@@ -19,14 +19,16 @@
         } else {
           _results.push(def);
         }
-      } catch (e) {
+      } catch (_error) {
+        e = _error;
         try {
           if (val[key] !== void 0) {
             _results.push(val[key]);
           } else {
             _results.push(def);
           }
-        } catch (e) {
+        } catch (_error) {
+          e = _error;
           _results.push(def);
         }
       }
@@ -35,7 +37,7 @@
   };
 
   _a.dig = dig = function(arr, keys, def) {
-    var k, ks, val, _i, _len, _results;
+    var e, k, ks, val, _i, _len, _results;
     if (def == null) {
       def = void 0;
     }
@@ -52,7 +54,8 @@
             val = def;
             break;
           }
-        } catch (e) {
+        } catch (_error) {
+          e = _error;
           try {
             if (val[k] !== void 0) {
               val = val[k];
@@ -60,7 +63,8 @@
               val = def;
               break;
             }
-          } catch (e) {
+          } catch (_error) {
+            e = _error;
             val = def;
             break;
           }
