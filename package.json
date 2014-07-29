@@ -5,9 +5,6 @@
     "type": "git",
     "url": "git://github.com/hanamura/underscore.array.git"
   },
-  "dependencies": {
-    "underscore": "~1.5.2"
-  },
   "devDependencies": {
     "grunt-contrib-coffee": "~0.8.2",
     "grunt-contrib-uglify": "~0.3.2",
