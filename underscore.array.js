@@ -1,7 +1,6 @@
 (function() {
   var dig, equal, oldArr, oldArray, rotate, same, sample, samples, take, _a,
-    __slice = [].slice,
-    _this = this;
+    __slice = [].slice;
 
   _a = {};
 
@@ -184,11 +183,13 @@
     oldArray = this._.array;
     oldArr = this._.arr;
     this._.array = this._.arr = _a;
-    _a.noConflict = function() {
-      _this._.array = oldArray;
-      _this._.arr = oldArr;
-      return _a;
-    };
+    _a.noConflict = (function(_this) {
+      return function() {
+        _this._.array = oldArray;
+        _this._.arr = oldArr;
+        return _a;
+      };
+    })(this);
   }
 
 }).call(this);
