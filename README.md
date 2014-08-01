@@ -2,6 +2,20 @@
 
 Array-related functions missing from [underscore.js](http://underscorejs.org/).
 
+## Installation
+
+### npm
+
+```
+npm install underscore.array
+```
+
+### bower
+
+```
+bower install underscore.array
+```
+
 ## Functions
 
 **take** `_.arr.take(arr, key, def = undefined)`
