@@ -1,5 +1,7 @@
 # Underscore.array
 
+Array-related functions missing from [underscore.js](http://underscorejs.org/).
+
 ## Functions
 
 **take** `_.arr.take(arr, key, def = undefined)`
